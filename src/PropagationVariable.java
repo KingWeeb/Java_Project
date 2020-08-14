@@ -2,7 +2,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
+import
 public class PropagationVariable {
     public static HashMap<String, PropagationVariable> instanceMapByPropagationVariable;
     private String name;
@@ -16,15 +16,15 @@ public class PropagationVariable {
     private int VotingParaK;
     private Component component;
     private HashMap<String, ArrayList<PhysixBehav>> physix;
-    private static final String GUID = UUID.randomUUID().toString();
+    private static final String UUID = java.util.UUID;.randomUUID().toString();
     private static int IDcounter = 0;
-    public final int ID;
+    private final int ID;
 
     public PropagationVariable(String name, boolean booleanState, ArrayList<String> sigConcatList,
                                String gateOutToState, String gateInAllToEachIn, String gateEachInToOut,
                                String FT_definition, int votingParaN, int votingParaK, Component component,
                                HashMap<String, ArrayList<PhysixBehav>> physix, int ID) {
-        instanceMapByPropagationVariable.put(GUID, this);
+        instanceMapByPropagationVariable.put(UUID, this);
         this.name = name;
         this.booleanState = booleanState;
         this.sigConcatList = sigConcatList;
@@ -105,8 +105,8 @@ public class PropagationVariable {
         return physix;
     }
 
-    public static String getGUID() {
-        return GUID;
+    public static String getUUID() {
+        return UUID;
     }
 
     public static int getIDcounter() {

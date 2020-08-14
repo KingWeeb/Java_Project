@@ -11,10 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="775d6ca5-c05a-45b3-97ad-d61ce63bf0f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/PhysixBehav.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Rectangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java_Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhysixBehav.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhysixBehav.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PropagationVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PropagationVariable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

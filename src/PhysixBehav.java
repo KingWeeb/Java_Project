@@ -2,10 +2,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 public class PhysixBehav {
-    public static String GUID = UUID.randomUUID().toString();
+    public static String UUID = java.util.UUID.randomUUID().toString();
     private String name;
     private String description;
     private HashMap<String, Object> affectedOut;
