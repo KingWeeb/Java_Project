@@ -2,9 +2,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import
+
 public class PropagationVariable {
-    public static HashMap<String, PropagationVariable> instanceMapByPropagationVariable;
+    private HashMap<java.util.UUID, PropagationVariable> instanceMapByPropagationVariable = new HashMap<>();
     private String name;
     private boolean booleanState;
     private ArrayList<String> sigConcatList;
@@ -16,14 +16,14 @@ public class PropagationVariable {
     private int VotingParaK;
     private Component component;
     private HashMap<String, ArrayList<PhysixBehav>> physix;
-    private static final String UUID = java.util.UUID;.randomUUID().toString();
-    private static int IDcounter = 0;
-    private final int ID;
+    private final java.util.UUID UUID = java.util.UUID.randomUUID();
+//    private static int IDcounter = 0;
+//    private final int ID;
 
     public PropagationVariable(String name, boolean booleanState, ArrayList<String> sigConcatList,
                                String gateOutToState, String gateInAllToEachIn, String gateEachInToOut,
                                String FT_definition, int votingParaN, int votingParaK, Component component,
-                               HashMap<String, ArrayList<PhysixBehav>> physix, int ID) {
+                               HashMap<String, ArrayList<PhysixBehav>> physix) {
         instanceMapByPropagationVariable.put(UUID, this);
         this.name = name;
         this.booleanState = booleanState;
@@ -36,12 +36,16 @@ public class PropagationVariable {
         VotingParaK = votingParaK;
         this.component = component;
         this.physix = physix;
-        this.ID = ID;
+//        this.ID = ID;
     }
+
+
 
     public PropagationVariable(String name) {
         this.name = name;
     }
+
+
 
     public void AddComponentLabel(Component component){
         this.component = component;
@@ -52,13 +56,22 @@ public class PropagationVariable {
     }
     public void SigConcatListAppend(ArrayList<String> newList){
         for (int i = 0; i < newList.size(); i++){
-            sigConcatList.add(newList[i]);
+            sigConcatList.add(newList.get(i));
         }
     }
     public void AddPhysix(@NotNull HashMap<String, ArrayList<PhysixBehav>> input){
         for (Map.Entry<String, ArrayList<PhysixBehav>> entry : input.entrySet()) {
             this.physix.put(entry.getKey(), entry.getValue());
         }
+    }
+
+    public PropagationVariable getInstanceMapByPropagationVariable(java.util.UUID UUID){
+        return instanceMapByPropagationVariable.get(UUID);
+    }
+
+
+    public void setPhysix(HashMap<String, ArrayList<PhysixBehav>> physix) {
+        this.physix = physix;
     }
 
     public String getName() {
@@ -105,12 +118,8 @@ public class PropagationVariable {
         return physix;
     }
 
-    public static String getUUID() {
+    public java.util.UUID getUUID() {
         return UUID;
-    }
-
-    public static int getIDcounter() {
-        return IDcounter;
     }
 
     public void setName(String name) {
@@ -157,8 +166,8 @@ public class PropagationVariable {
         for (int i = 0; i < 3; i++){ //test
             ArrayList<PropagationVariable> test_list = new ArrayList<PropagationVariable>();
             test_list.add(new PropagationVariable("test"));
-            System.out.println(test_list.get(i).ID);
-            System.out.println(test_list.get(i).IDcounter);
+//            System.out.println(test_list.get(i).ID);
+//            System.out.println(test_list.get(i).IDcounter);
 
         }
 
