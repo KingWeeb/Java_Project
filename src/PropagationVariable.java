@@ -24,7 +24,6 @@ public class PropagationVariable {
                                String gateOutToState, String gateInAllToEachIn, String gateEachInToOut,
                                String FT_definition, int votingParaN, int votingParaK, Component component,
                                HashMap<String, ArrayList<PhysixBehav>> physix) {
-        instanceMapByPropagationVariable.put(UUID, this);
         this.name = name;
         this.booleanState = booleanState;
         this.sigConcatList = sigConcatList;
@@ -37,6 +36,8 @@ public class PropagationVariable {
         this.component = component;
         this.physix = physix;
 //        this.ID = ID;
+        instanceMapByPropagationVariable.put(UUID, this);
+
     }
 
 

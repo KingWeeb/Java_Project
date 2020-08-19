@@ -15,12 +15,11 @@ public class State {
     private HashMap<String, Event> affectedEvent;
     private Component component;
 
-    public State(String name, String stateDescription, HashMap<java.util.UUID, State> instanceMapByState,
-                 HashMap<String, PropagationVariable> affectedOut, HashMap<String, PropagationVariable> affectedIn,
+    public State(String name, String stateDescription, HashMap<String, PropagationVariable> affectedOut, HashMap<String, PropagationVariable> affectedIn,
                  HashMap<String, State> affectedStateOtherComponent, HashMap<String, PropagationVariable> affectedVarOtherComponent, HashMap<String, ComponentLevel> affectedLevelOtherComponent, HashMap<String, PropagationVariable> affectedVarSelf, HashMap<String, PropagationVariable> affectedStateSelf, HashMap<String, Event> affectedEvent, Component component) {
         this.name = name;
         this.stateDescription = stateDescription;
-        this.instanceMapByState = instanceMapByState;
+
         this.affectedOut = affectedOut;
         this.affectedIn = affectedIn;
         this.affectedStateOtherComponent = affectedStateOtherComponent;
@@ -30,6 +29,7 @@ public class State {
         this.affectedStateSelf = affectedStateSelf;
         this.affectedEvent = affectedEvent;
         this.component = component;
+        instanceMapByState.put(UUID, this);
     }
 
     public State(String name){

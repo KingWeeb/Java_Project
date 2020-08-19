@@ -15,7 +15,6 @@ public class PhysixBehav {
     private HashMap<String, Object> affectedEvents;
 
     public PhysixBehav(String name, String description, HashMap<String, Object> affectedOut, HashMap<String, Object> affectedIn, HashMap<String, Object> affectedStateOtherComponent, HashMap<String, Object> affectedVarOtherComponent, HashMap<String, Object> affectedLevelOtherComponent, HashMap<String, Object> affectedVarSelf, HashMap<String, Object> affectedStateSelf, HashMap<String, Object> affectedEvents) {
-        instanceMapByPhysixBehav.put(UUID, this);
         this.name = name;
         this.description = description;
         this.affectedOut = affectedOut;
@@ -26,6 +25,8 @@ public class PhysixBehav {
         this.affectedVarSelf = affectedVarSelf;
         this.affectedStateSelf = affectedStateSelf;
         this.affectedEvents = affectedEvents;
+        instanceMapByPhysixBehav.put(UUID, this);
+
     }
 
     public PhysixBehav getInstanceMapByPhysixBehav(java.util.UUID UUID){

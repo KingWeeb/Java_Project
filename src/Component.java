@@ -24,7 +24,6 @@ public class Component {
     public Component(String name, ArrayList<String> stateList, HashMap<String, Object> stateMap,
                      ArrayList<String> inflowRawList, ArrayList<String> outflowRawList, boolean isRepairable,
                      String distro, HashMap<String, Double> distroPara, HashMap<String, PhysixBehav> physix) {
-        instanceMapByComponent.put(UUID, this);
         this.name = name;
         this.stateList = stateList;
         this.stateMap = stateMap;
@@ -34,6 +33,8 @@ public class Component {
         this.distro = distro;
         this.distroPara = distroPara;
         this.physix = physix;
+        instanceMapByComponent.put(UUID, this);
+
     }
     public void Propagationalize(){
         for (int i = 0; i < inflowRawList.size(); i++){
