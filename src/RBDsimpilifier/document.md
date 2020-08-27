@@ -1,0 +1,3 @@
+class RBDsimpilifier 的constructer接收一个二维arraylist（ArrayList<ArrayList<Object>>）作为输入，该输入是一个以2维数组方式存储的RBD，其中每个子ArrayList对应一条路径。
+通过RBDsimpilifier 的getResult方法可以得到化简后的RBD的根节点。化简后的RBD用树状结构存储，通过每个Node对象的getLinked方法可以得到与其连接的子节点，getUnlinked方法得到与其共有一个父节点的同一级节点。遍历所有节点即可得到化简后的RBD，具体方法可以参照RBDsimplifier类的printTree方法。
+具体化简步骤分为三步，第一步把input转化为QM算法所需的最小项格式（Binary，ListOfString, Collection），第二步调用QM算法化简逻辑表达式(QmMath, Implicant, ImplicantGroups)，第三步把简化的逻辑表达式通过不断地提取公因式来得到简化的RBD(ExtractCommonFactor, Node)。
